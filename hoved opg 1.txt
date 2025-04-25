@@ -1,0 +1,36 @@
+namespace IntroProgram
+namespace IntroProgram
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //overskriver med baggrunds farven
+            Console.Clear();
+            //sætter baggrunds farven
+            Console.BackgroundColor = ConsoleColor.Blue;
+            //sætter tekst farven
+            Console.ForegroundColor = ConsoleColor.Blue;
+            // sætter position på teksten
+            Console.SetCursorPosition(4, 6);
+            //skriver teksten som så bliver en af farverne på flaget
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+            //ændre farve af teskt og baggrund til rød
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;
+            // sætter position på teksten
+            Console.SetCursorPosition(4, 4);
+            //skriver teksten som så bliver en af farverne på flaget
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            //ændre farve af teskt og baggrund til hvid
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
+            // sætter position på teksten
+            Console.SetCursorPosition(4, 5);
+            //skriver teksten som så bliver en af farverne på flaget
+            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,28 @@
+//spøger om din alder
+Console.WriteLine("skriv din alder");
+//laver string om til int og gemmer input i variable
+int alder = Convert.ToInt32(Console.ReadLine());
+
+//chekker om inputet er mindre end 18 
+if (alder < 18)
+// vis input er mindre end 18 så skriver den "prisen er 45kr"
+{
+    Console.WriteLine(" prisen er 45kr");
+
+}
+//chekker om talet er mellem 18 og 65 
+else if (alder <= 65)
+//hvis input er mellem 18 og 65 så skriver den "prisen er 75kr"
+{
+    Console.WriteLine("prisen er 75kr");
+
+//chekker om talet er mere end 65
+}
+else
+//hvi input er over 65 så skriver den "prisen er 35kr"
+{
+    Console.WriteLine("prisen er 35kr");
+
+}
+//venter på en key bliver trykket får koden går vidre
+Console.ReadKey();

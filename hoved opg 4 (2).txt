@@ -1,0 +1,87 @@
+            //laver variabler
+            string tast;
+            bool isRunning = true;
+            double cmængde = 0;
+            double fmængde = 0;
+            double fxmængde = 0;
+            double comængde = 0;
+            double pmængde = 0;
+            double colap = 15;
+            double fantap = 15;
+            double pepsip = 15;
+            double fxp = 15;
+            double cociop = 20;
+            //starter do while loop
+            do
+            {
+                Console.Clear();
+                //spøger om hvad for en drink man vil havde
+                Console.WriteLine("Tryk på \n1: cola 15kr \n2: pepsi 15kr  \n3: fanta 15kr \n4: faxa kondi 15kr \n5: cocio 20kr \nq: for at slutte ");
+                tast = Console.ReadLine();
+                //starter swich case
+                switch (tast)
+                {
+                    //hvis man trykker et liger den en til cola
+                    case "1":
+                        //den spøger om hvor mange man vil havde og ligger det oven i
+                        Console.WriteLine("hvor mange");
+                        //laver dit svar om til double og gemmer det i et variable
+                        cmængde = Convert.ToDouble(Console.ReadLine());
+
+                        break;
+
+                    //hvis man trykker et liger den en til pepsi
+                    case "2":
+                        //den spøger om hvor mange man vil havde og ligger det oven i
+                        Console.WriteLine("hvor mange");
+                        //laver dit svar om til double og gemmer det i et variable
+                        pmængde = Convert.ToDouble(Console.ReadLine());
+                        break;
+
+                    //hvis man trykker et liger den en til fanta
+                    case "3":
+                        ;
+                        //den spøger om hvor mange man vil havde og ligger det oven i
+                        Console.WriteLine("hvor mange");
+                        // laver dit svar om til double og gemmer det i et variable
+                        fmængde = Convert.ToDouble(Console.ReadLine());
+                        break;
+
+                    //hvis man trykker et liger den en til faxa kondi
+                    case "4":
+                        //den spøger om hvor mange man vil havde og ligger det oven i
+                        Console.WriteLine("hvor mange");
+                        // laver dit svar om til double og gemmer det i et variable
+                        fxmængde = Convert.ToDouble(Console.ReadLine());
+                        break;
+
+                    //hvis man trykker et liger den en til cocio
+                    case "5":
+                        //den spøger om hvor mange man vil havde og ligger det oven i
+                        Console.WriteLine("hvor mange");
+                        // laver dit svar om til double og gemmer det i et variable
+                        comængde = Convert.ToDouble(Console.ReadLine());
+                        break;
+
+                    //hvis man trykker lukker loopet
+                    case "q":
+                        // sætter IsRunning til false så loopet stopper
+                        isRunning = false;
+                        break;
+
+                    //hvis man ikke trykker noget af mulighederne siger den det her
+                    default:
+                        Console.WriteLine("Du har ikke tastet 1,2,3,4,5 eller q");
+                        break;
+
+
+                }
+            }
+            //loopet køre mens IsRunning er true
+            while (isRunning);
+            //udregner total prisen
+            double totalp = cmængde * colap + pmængde * pepsip + fxmængde * fxp + fmængde * fantap + comængde * cociop;
+            //skriver hvad du har bbestilt samt prisen
+            Console.WriteLine("du har købt {0} cola {1} fanta {2} pepsi {3} cocio {4} faxa kondi det bliver ialt {5}", cmængde, pmængde, fmængde, fxmængde, comængde, totalp);
+            //venter på input
+            Console.ReadKey();

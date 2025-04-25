@@ -1,0 +1,145 @@
+//laver variabler
+string tast;
+bool isRunning = true;
+double voksenmængde = 0;
+double altmængde = 0;
+double børnmængde = 0;
+double voksenmængde10 = 0;
+double altmængde10 = 0;
+double børnmængde10 = 0;
+double børnferiemægnde = 0;
+double voksenpris = 42;
+double børnferie = 10;
+double børnpris = 15;
+double altpris = 23;
+double voksenpris10 = 330;
+double børnpris10 = 135;
+double altpris10 = 175;
+//starter do while loopet
+do
+{
+    Console.Clear();
+    //spøger om hvad for en billet man vil havde
+    Console.WriteLine("Tryk på \n\n1: voksen 42kr" +
+        //sætter dem på forskelige linger
+        "\n\n2: Pensionister, efterlønsmodtagere, arbejdsledige, borgere på ledighedsydelse, dagpengemodtagere og studerende (dokumentation påkrævet) 23 kr " +
+        "\n\n3: Børn (7-15 år) 15 kr " +
+        "\n\n4: Skoleferiebillet Børn (7-15 år) sommer/efterår/vinter 10 kr : " +
+        "\n\n for 10 tur pass " +
+        "\n\n5: Voksne 330 kr 6: Pensionister, efterlønsmodtagere, arbejdsledige, borgere på ledighedsydelse, dagpengemodtagere og studerende (dokumentation påkrævet) 175 kr " +
+        "\n\n7: Børn (7-15 år) 135 kr " +
+        "\n\nq: for at slutte ");
+    tast = Console.ReadLine(); 
+    //starter swich case
+    switch (tast)
+    {
+        //hvis man trykker 1 så ligger den en billet til
+        case "1":
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            //laver dit svar om til double og gemmer det i et variable
+            voksenmængde = Convert.ToDouble(Console.ReadLine());
+            if (voksenmængde > 10)
+                Console.WriteLine("kan max købe 10");
+                Thread.Sleep(1000);
+            break;
+
+        //hvis man trykker 2 så ligger den en billet til
+        case "2":
+            Console.WriteLine("har du documantation\n ja\n nej");
+            string y = Console.ReadLine();
+            if (y == "ja")
+            {
+                //den spøger om hvor mange man vil havde og ligger det oven i prisen
+                Console.WriteLine("hvor mange");
+                //laver dit svar om til double og gemmer det i et variable
+                altmængde = Convert.ToDouble(Console.ReadLine());
+                if (altmængde > 10)
+                    Console.WriteLine("kan max købe 10");
+                Thread.Sleep(1000);
+
+            }
+            else
+            {
+                Console.WriteLine("kan ikke give dig denne rabat");
+                Thread.Sleep(1000);
+            }
+            break;
+
+        //hvis man trykker 3 så ligger den en billet til prisen
+        case "3":
+            ;
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            // laver dit svar om til double og gemmer det i et variable
+            børnmængde = Convert.ToDouble(Console.ReadLine());
+            if (børnmængde > 10)
+                Console.WriteLine("kan max købe 10");
+            Thread.Sleep(1000);
+            break;
+
+        //hvis man trykker 4 så ligger den en billet til prisen
+        case "4":
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            // laver dit svar om til double og gemmer det i et variable
+            børnferiemægnde = Convert.ToDouble(Console.ReadLine());
+            if (børnferiemægnde > 10)
+                Console.WriteLine("kan max købe 10");
+            Thread.Sleep(1000);
+            break;
+
+        //hvis man trykker 5 så ligger den en billet til prisen
+        case "5": 
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            // laver dit svar om til double og gemmer det i et variable
+            voksenmængde10 = Convert.ToDouble(Console.ReadLine());
+            if (voksenmængde10 > 10)
+                Console.WriteLine("kan max købe 10");
+            Thread.Sleep(1000);
+            break;
+        //hvis man trykker 6 så ligger den en billet til prisen
+        case "6":
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            // laver dit svar om til double og gemmer det i et variable
+            altmængde10 = Convert.ToDouble(Console.ReadLine());
+            if (altmængde10 > 10)
+                Console.WriteLine("kan max købe 10");
+            Thread.Sleep(1000);
+            break;
+
+        case "7":
+            //den spøger om hvor mange man vil havde og ligger det oven i prisen
+            Console.WriteLine("hvor mange");
+            // laver dit svar om til double og gemmer det i et variable
+            børnmængde10 = Convert.ToDouble(Console.ReadLine());
+            if (børnmængde10 > 10)
+                Console.WriteLine("kan max købe 10");
+            Thread.Sleep(1000);
+            break;
+
+        //hvis man trykker lukker loopet
+        case "q":
+            // sætter IsRunning til false så loopet stopper
+            isRunning = false;
+            break;
+
+        //hvis man ikke trykker noget af mulighederne siger den det her
+        default:
+            Console.WriteLine("Du har ikke tastet 1,2,3,4,5,6,7 eller q");
+            Thread.Sleep(1000);
+            break;
+
+
+    }
+}
+//loopet køre mens IsRunning er true
+while (isRunning);
+//udregner total prisen
+double totalp = voksenmængde * voksenpris + altmængde * altpris + børnmængde * børnpris + voksenmængde10 * voksenpris10 + altmængde10 * altpris10 + børnmængde10 * børnpris10 + børnferie * børnferiemægnde;
+//skriver hvad du har bestilt samt den totale pris
+Console.WriteLine("du har købt {0} voksen billeter {1} alt billeter {2} børne billeter {3} 10 tur pas voksen {4} 10 tur pas alt {5} 10 tur pas børn {6} børne ferie billeter \ndet bliver ialt {7}", voksenmængde, altmængde, børnmængde, voksenmængde10, altmængde10, børnmængde10, børnferie, totalp);
+//venter på input
+Console.ReadKey();
