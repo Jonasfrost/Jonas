@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <title>Jonas' Portfolio</title>
+    <style>
+        body {
+            background-color: darkgrey;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        a {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #0033cc;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        img {
+            margin-top: 15px;
+            border: 2px solid #000;
+            border-radius: 5px;
+        }
+
+        /* New CV section styles */
+        .cv-section {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+            width: 48%;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+            /* Overskrift styling i CV sektionen */
+            .cv-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: #aaa;
+            }
+
+            /* CV billede styling max bredde centreret og med hover effekt */
+            .cv-section img {
+                max-width: 500px;
+                height: auto;
+                display: block;
+                margin: 1rem auto;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+                cursor: pointer;
+            }
+
+                /* Hover effekt på CV billedet zoom lidt ind */
+                .cv-section img:hover {
+                    transform: scale(1.05);
+                }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jonas' Portfolio</h1>
+
+        <p>
+            Mit navn er Jonas Frost, og jeg går lige nu på TEC som data- og kommunikationselev med fokus på programmering.<br>
+
+            Jeg er 17 er gammel og bor i Værløse.<br>
+
+            Jeg har gennemført grundforløb 1 og 2 og er nu i gang med hovedforløb 1.<br>
+
+            Data og teknologi har altid været en af mine interesser.<br><br>
+
+            Jeg går på ungdomsskolen i Farum og jeg har nu været der i fire år, hvor vi tidligere har bygget og programmeret robotter. Lige nu arbejder vi på et Escape Room-projekt.<br>
+            Lige nu er jeg der mest for at hjælpe de mindre klasser med med deres projekter som en slags hjælpe lære.<br>
+
+            Jeg har kodet både i min fritid og i grundforløb 2. Jeg har arbejdet med HTML, CSS, Python og C#.<br>
+
+            Tildigere har jeg arbejdet i coop 365, Din Candy Shop og som avisududbringer.<br>
+
+            <br><br>
+            Kontakt mig gerne, hvis i har spørgsmål eller ønsker at samarbejde.<br>
+            Tel: +45 21900669<br>
+            Mail: Jonasmfrost@gmail.com<br>
+            Github: <a href="https://github.com/Jonasfrost/Jonas" target="_blank">Min GitHub</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/jonas-frost-16178a345/" target="_blank">Min LinkedIn</a>
+        </p>
+
+        <div class="cv-section">
+            <h2>Klik her for et tættere kig på mit CV:</h2>
+            <img src="cv_jonas_2.jpg" alt="Jonas' CV" />
+        </div>
+    </div>
+</body>
+</html>
