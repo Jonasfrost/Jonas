@@ -4,15 +4,34 @@
     <title>Jonas' Portfolio</title>
     <style>
         body {
-            background-color: darkgrey;
+            background: linear-gradient(135deg, #b6e0fe 0%, #fbc2eb 100%);
             color: #000;
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Subtle animated overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: repeating-radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0, rgba(255,255,255,0.08) 2px, transparent 3px, transparent 100px),
+                        repeating-radial-gradient(circle at 80% 70%, rgba(255,255,255,0.06) 0, rgba(255,255,255,0.06) 1.5px, transparent 2.5px, transparent 100px);
+            z-index: 0;
+            animation: moveBg 18s linear infinite alternate;
+        }
+
+        @keyframes moveBg {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 80px, 80px 100px; }
         }
 
         .container {
             text-align: center;
-            max-width: 1200px;
+            max-width: 1600px;
             margin: auto;
             background-color: white;
             padding: 30px;
@@ -24,21 +43,21 @@
         }
 
         p {
-            font-size: 1.2em;
-            line-height: 1.6;
+            font-size: 1.4em;
+            line-height: 1.4;
         }
 
         a {
             display: block;
             margin-top: 10px;
-            font-weight: bold;
+            font-weight: normal;
             color: #0033cc;
             text-decoration: none;
         }
 
-            a:hover {
-                text-decoration: underline;
-            }
+        a:hover {
+            text-decoration: underline;
+        }
 
         img {
             margin-top: 15px;
@@ -46,63 +65,96 @@
             border-radius: 5px;
         }
 
-        /* New CV section styles */
         .cv-section {
             background: rgba(255, 255, 255, 0.03);
             padding: 2rem;
             border-radius: 10px;
             backdrop-filter: blur(8px);
             box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
-            width: 48%;
+            width: 70%;
             margin: 2rem auto;
-            text-align: center;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
-            /* Overskrift styling i CV sektionen */
-            .cv-section h2 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-                color: #aaa;
-            }
+        .cv-section-img {
+            flex: 0 0 auto;
+            max-width: 350px;
+            background: #f5f5f5;
+            border: 2px solid #bbb;
+            border-radius: 12px;
+            padding: 18px 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-            /* CV billede styling max bredde centreret og med hover effekt */
-            .cv-section img {
-                max-width: 500px;
-                height: auto;
-                display: block;
-                margin: 1rem auto;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 8px;
-                transition: transform 0.3s ease;
-                cursor: pointer;
-            }
+        .cv-section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
 
-                /* Hover effekt på CV billedet zoom lidt ind */
-                .cv-section img:hover {
-                    transform: scale(1.05);
-                }
+        .cv-section-text {
+            flex: 1 1 0;
+        }
+
+        .cv-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position:fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #000;
+        }
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1100;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Jonas' Portfolio</h1>
+        <h1>Om Mig</h1>
 
         <p>
             Mit navn er Jonas Frost, og jeg går lige nu på TEC som data- og kommunikationselev med fokus på programmering.<br>
-
             Jeg er 17 er gammel og bor i Værløse.<br>
-
             Jeg har gennemført grundforløb 1 og 2 og er nu i gang med hovedforløb 1.<br>
-
             Data og teknologi har altid været en af mine interesser.<br><br>
-
-            Jeg går på ungdomsskolen i Farum og jeg har nu været der i fire år, hvor vi tidligere har bygget og programmeret robotter. Lige nu arbejder vi på et Escape Room-projekt.<br>
+            Jeg går på ungdomsskolen i Farum og jeg har nu været der i fire år, hvor vi tidligere har bygget og programmeret robotter. Lige nu arbejder vi på et Escape Room projekt.<br>
             Lige nu er jeg der mest for at hjælpe de mindre klasser med med deres projekter som en slags hjælpe lære.<br>
-
             Jeg har kodet både i min fritid og i grundforløb 2. Jeg har arbejdet med HTML, CSS, Python og C#.<br>
-
             Tildigere har jeg arbejdet i coop 365, Din Candy Shop og som avisududbringer.<br>
-
             <br><br>
             Kontakt mig gerne, hvis i har spørgsmål eller ønsker at samarbejde.<br>
             Tel: +45 21900669<br>
@@ -112,9 +164,36 @@
         </p>
 
         <div class="cv-section">
-            <h2>Klik her for et tættere kig på mit CV:</h2>
-            <img src="cv_jonas_2.jpg" alt="Jonas' CV" />
+            <div class="cv-section-img">
+                <img src="cv_jonas_2.jpg" alt="Jonas' CV" onclick="openModal()" />
+            </div>
+            <div class="cv-section-text">
+                <h2>Klik her for et tættere kig på mit CV</h2>
+            </div>
         </div>
     </div>
+
+    <!-- Modal for enlarged image -->
+    <div id="cvModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg" src="cv_jonas_2.jpg" alt="Jonas' CV" />
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('cvModal').style.display = 'block';
+        }
+        function closeModal() {
+            document.getElementById('cvModal').style.display = 'none';
+        }
+        // Prevent modal from closing when clicking the image itself
+        document.getElementById('modalImg').onclick = function(event) {
+            event.stopPropagation();
+        };
+        // Optional: close modal with ESC key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 </html>
