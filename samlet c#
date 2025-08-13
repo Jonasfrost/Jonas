@@ -1,0 +1,923 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool runProgram = true;
+
+        while (runProgram)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Hovedmenu ===");
+            Console.WriteLine("1) Variabler");
+            Console.WriteLine("2) Strings");
+            Console.WriteLine("3) Aritmetiske udtryk");
+            Console.WriteLine("4) Input/Opsamling");
+            Console.WriteLine("5) Variabler i udtryk");
+            Console.WriteLine("6) Boolske variable");
+            Console.WriteLine("7) If-else statements");
+            Console.WriteLine("8) Switch Case");
+            Console.WriteLine("9) Loops");
+            Console.WriteLine("10) Udvidet kontrolstrukturer");
+            Console.WriteLine("11) Metoder og instanser");
+            Console.WriteLine("12) Returtyper og parametre");
+            Console.WriteLine("13) Nedarvning");
+            Console.WriteLine("14) Arrays");
+            Console.WriteLine("0) Afslut");
+            Console.Write("Vælg et emne: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    VariablerMenu();
+                    break;
+                case "2":
+                    StringsMenu();
+                    break;
+                case "3":
+                    AritmetiskeMenu();
+                    break;
+                case "4":
+                    InputMenu();
+                    break;
+                case "5":
+                    VariabelUdtrykMenu();
+                    break;
+                case "6":
+                    BoolskeMenu();
+                    break;
+                case "7":
+                    IfElseMenu();
+                    break;
+                case "8":
+                    SwitchCaseMenu();
+                    break;
+                case "9":
+                    LoopsMenu();
+                    break;
+                case "10":
+                    UdvidetKontrolMenu();
+                    break;
+                case "11":
+                    MetoderInstanserMenu();
+                    break;
+                case "12":
+                    ReturtyperParametreMenu();
+                    break;
+                case "13":
+                    NedarvningMenu();
+                    break;
+                case "14":
+                    ArraysMenu();
+                    break;
+                case "0":
+                    runProgram = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    // --- Variabler Menu ---
+    static void VariablerMenu()
+    {
+        bool runSubmenu = true;
+
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Variabler Menu ===");
+            Console.WriteLine("1) Udskriv to tal");
+            Console.WriteLine("2) Udskriv navn, alder og penge");
+            Console.WriteLine("3) Udskriv priser og total");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    VariablerOpgave1();
+                    break;
+                case "2":
+                    VariablerOpgave2();
+                    break;
+                case "3":
+                    VariablerOpgave3();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void VariablerOpgave1()
+    {
+        Console.Clear();
+        int tal1 = 5;
+        int tal2 = 3;
+
+        Console.WriteLine($"Tal 1 er {tal1}");
+        Console.WriteLine($"Tal 2 er {tal2}");
+
+        Pause();
+    }
+
+    static void VariablerOpgave2()
+    {
+        Console.Clear();
+        string navn = "Søren";
+        int alder = 16;
+        double penge = 1234.34;
+
+        Console.WriteLine($"Jeg hedder {navn}, er {alder} år gammel og har tjent {penge} kr. på at lappe cykler.");
+
+        Pause();
+    }
+
+    static void VariablerOpgave3()
+    {
+        Console.Clear();
+        double kage = 23.56;
+        double oel = 34.67;
+        double poelse = 65.34;
+
+        double total = kage + oel + poelse;
+
+        Console.WriteLine($"Kage: {kage} kr.");
+        Console.WriteLine($"Øl: {oel} kr.");
+        Console.WriteLine($"Pølse: {poelse} kr.");
+        Console.WriteLine($"I alt: {total} kr.");
+
+        Pause();
+    }
+
+    // --- Strings Menu ---
+    static void StringsMenu()
+    {
+        bool runSubmenu = true;
+
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Strings Menu ===");
+            Console.WriteLine("1) Udskriv og ændr variabler");
+            Console.WriteLine("2) Sammenkæd tekst og tal");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    StringsOpgave1();
+                    break;
+                case "2":
+                    StringsOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void StringsOpgave1()
+    {
+        Console.Clear();
+
+        int tal = 10;
+        string tekst = "Hej";
+        double dec = 5.5;
+
+        Console.WriteLine(tal);
+        Console.WriteLine(tekst);
+        Console.WriteLine(dec);
+
+        tal = 20;
+        tekst = "Farvel";
+        dec = 10.1;
+
+        Console.WriteLine("\nEfter ændring:");
+        Console.WriteLine(tal);
+        Console.WriteLine(tekst);
+        Console.WriteLine(dec);
+
+        Pause();
+    }
+
+    static void StringsOpgave2()
+    {
+        Console.Clear();
+
+        double belob = 200.50;
+        string startTekst = "Jeg har ";
+        string slutTekst = " kr. i banken.";
+
+        Console.WriteLine(startTekst + belob + slutTekst);
+
+        Pause();
+    }
+
+    // --- Aritmetiske udtryk Menu ---
+    static void AritmetiskeMenu()
+    {
+        bool runSubmenu = true;
+
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Aritmetiske udtryk Menu ===");
+            Console.WriteLine("1) Beregn udtryk");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    AritmetiskeOpgave1();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void AritmetiskeOpgave1()
+    {
+        Console.Clear();
+
+        int result1 = 2 + 1 * 2;
+        int result2 = (2 + 1) * 2;
+        int result3 = 5 / 2;
+        int result4 = 8 % 3;
+        int result5 = 1 - 5;
+
+        Console.WriteLine("2 + 1 * 2 = " + result1);
+        Console.WriteLine("(2 + 1) * 2 = " + result2);
+        Console.WriteLine("5 / 2 = " + result3);
+        Console.WriteLine("8 % 3 = " + result4);
+        Console.WriteLine("1 - 5 = " + result5);
+
+        Pause();
+    }
+
+    // --- Input/Opsamling Menu ---
+    static void InputMenu()
+    {
+        bool runSubmenu = true;
+
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Input/Opsamling Menu ===");
+            Console.WriteLine("1) Udskriv brugerens navn");
+            Console.WriteLine("2) Beregn areal af cirkel");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    InputOpgave1();
+                    break;
+                case "2":
+                    InputOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void InputOpgave1()
+    {
+        Console.Clear();
+
+        Console.Write("Indtast dit navn: ");
+        string navn = Console.ReadLine();
+
+        Console.WriteLine($"Hej {navn}! Velkommen til programmet.");
+
+        Pause();
+    }
+
+    static void InputOpgave2()
+    {
+        Console.Clear();
+
+        Console.Write("Indtast radius for cirklen: ");
+        string input = Console.ReadLine();
+
+        if (double.TryParse(input, out double radius))
+        {
+            double areal = Math.PI * radius * radius;
+            Console.WriteLine($"Arealet af cirklen med radius {radius} er {areal:F2}");
+        }
+        else
+        {
+            Console.WriteLine("Ugyldigt input, prøv med et tal.");
+        }
+
+        Pause();
+    }
+
+    // --- Variabler i udtryk Menu ---
+    static void VariabelUdtrykMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Variabler i udtryk Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    VariabelUdtrykOpgave1();
+                    break;
+                case "2":
+                    VariabelUdtrykOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void VariabelUdtrykOpgave1()
+    {
+        Console.Clear();
+        // Opgave 1: 3 int variabler, 1 result, operation med alle 3
+        int a = 2, b = 3, c = 4;
+        int result = a + b * c;
+        Console.WriteLine($"a = {a}, b = {b}, c = {c}");
+        Console.WriteLine($"Resultat af a + b * c = {result}");
+        Pause();
+    }
+
+    static void VariabelUdtrykOpgave2()
+    {
+        Console.Clear();
+        // Opgave 2: 3 variabler (int/double), 1 result, mix tal og variabelnavne
+        double x = 5.5, y = 2.2, z = 3.3;
+        double result = x + y * 2 - z;
+        Console.WriteLine($"x = {x}, y = {y}, z = {z}");
+        Console.WriteLine($"Resultat af x + y * 2 - z = {result}");
+        Pause();
+    }
+
+    // --- Boolske variable Menu ---
+    static void BoolskeMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Boolske variable Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    BoolskeOpgave1();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void BoolskeOpgave1()
+    {
+        Console.Clear();
+        // Stub til Boolske variable opgave 1
+        Console.WriteLine("Her skal Boolske variable opgave 1 implementeres.");
+        Pause();
+    }
+
+    // --- If-else statements Menu ---
+    static void IfElseMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== If-else statements Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("3) Opgave 3");
+            Console.WriteLine("4) Opgave 4");
+            Console.WriteLine("5) Opgave 5");
+            Console.WriteLine("6) Opgave 6");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    IfElseOpgave1();
+                    break;
+                case "2":
+                    IfElseOpgave2();
+                    break;
+                case "3":
+                    IfElseOpgave3();
+                    break;
+                case "4":
+                    IfElseOpgave4();
+                    break;
+                case "5":
+                    IfElseOpgave5();
+                    break;
+                case "6":
+                    IfElseOpgave6();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void IfElseOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 1 implementeres.");
+        Pause();
+    }
+    static void IfElseOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 2 implementeres.");
+        Pause();
+    }
+    static void IfElseOpgave3()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 3 implementeres.");
+        Pause();
+    }
+    static void IfElseOpgave4()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 4 implementeres.");
+        Pause();
+    }
+    static void IfElseOpgave5()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 5 implementeres.");
+        Pause();
+    }
+    static void IfElseOpgave6()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal If-else statements opgave 6 implementeres.");
+        Pause();
+    }
+
+    // --- Switch Case Menu ---
+    static void SwitchCaseMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Switch Case Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    SwitchCaseOpgave1();
+                    break;
+                case "2":
+                    SwitchCaseOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void SwitchCaseOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Switch Case opgave 1 implementeres.");
+        Pause();
+    }
+    static void SwitchCaseOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Switch Case opgave 2 implementeres.");
+        Pause();
+    }
+
+    // --- Loops Menu ---
+    static void LoopsMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Loops Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("3) Opgave 3");
+            Console.WriteLine("4) Opgave 4");
+            Console.WriteLine("5) Opgave 5");
+            Console.WriteLine("6) Opgave 6");
+            Console.WriteLine("7) Opgave 7");
+            Console.WriteLine("8) Opgave 8");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    LoopsOpgave1();
+                    break;
+                case "2":
+                    LoopsOpgave2();
+                    break;
+                case "3":
+                    LoopsOpgave3();
+                    break;
+                case "4":
+                    LoopsOpgave4();
+                    break;
+                case "5":
+                    LoopsOpgave5();
+                    break;
+                case "6":
+                    LoopsOpgave6();
+                    break;
+                case "7":
+                    LoopsOpgave7();
+                    break;
+                case "8":
+                    LoopsOpgave8();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void LoopsOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 1 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 2 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave3()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 3 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave4()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 4 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave5()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 5 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave6()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 6 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave7()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 7 implementeres.");
+        Pause();
+    }
+    static void LoopsOpgave8()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Loops opgave 8 implementeres.");
+        Pause();
+    }
+
+    // --- Udvidet kontrolstrukturer Menu ---
+    static void UdvidetKontrolMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Udvidet kontrolstrukturer Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("3) Opgave 3");
+            Console.WriteLine("4) Opgave 4");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    UdvidetKontrolOpgave1();
+                    break;
+                case "2":
+                    UdvidetKontrolOpgave2();
+                    break;
+                case "3":
+                    UdvidetKontrolOpgave3();
+                    break;
+                case "4":
+                    UdvidetKontrolOpgave4();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void UdvidetKontrolOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Udvidet kontrolstrukturer opgave 1 implementeres.");
+        Pause();
+    }
+    static void UdvidetKontrolOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Udvidet kontrolstrukturer opgave 2 implementeres.");
+        Pause();
+    }
+    static void UdvidetKontrolOpgave3()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Udvidet kontrolstrukturer opgave 3 implementeres.");
+        Pause();
+    }
+    static void UdvidetKontrolOpgave4()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Udvidet kontrolstrukturer opgave 4 implementeres.");
+        Pause();
+    }
+
+    // --- Metoder og instanser Menu ---
+    static void MetoderInstanserMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Metoder og instanser Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    MetoderInstanserOpgave1();
+                    break;
+                case "2":
+                    MetoderInstanserOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void MetoderInstanserOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Metoder og instanser opgave 1 implementeres.");
+        Pause();
+    }
+    static void MetoderInstanserOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Metoder og instanser opgave 2 implementeres.");
+        Pause();
+    }
+
+    // --- Returtyper og parametre Menu ---
+    static void ReturtyperParametreMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Returtyper og parametre Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    ReturtyperParametreOpgave1();
+                    break;
+                case "2":
+                    ReturtyperParametreOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void ReturtyperParametreOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Returtyper og parametre opgave 1 implementeres.");
+        Pause();
+    }
+    static void ReturtyperParametreOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Returtyper og parametre opgave 2 implementeres.");
+        Pause();
+    }
+
+    // --- Nedarvning Menu ---
+    static void NedarvningMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Nedarvning Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    NedarvningOpgave1();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void NedarvningOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Nedarvning opgave 1 implementeres.");
+        Pause();
+    }
+
+    // --- Arrays Menu ---
+    static void ArraysMenu()
+    {
+        bool runSubmenu = true;
+        while (runSubmenu)
+        {
+            Console.Clear();
+            Console.WriteLine("=== Arrays Menu ===");
+            Console.WriteLine("1) Opgave 1");
+            Console.WriteLine("2) Opgave 2");
+            Console.WriteLine("0) Tilbage til hovedmenu");
+            Console.Write("Vælg en opgave: ");
+            string input = Console.ReadLine();
+            switch (input)
+            {
+                case "1":
+                    ArraysOpgave1();
+                    break;
+                case "2":
+                    ArraysOpgave2();
+                    break;
+                case "0":
+                    runSubmenu = false;
+                    break;
+                default:
+                    Console.WriteLine("Ugyldigt valg. Prøv igen.");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void ArraysOpgave1()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Arrays opgave 1 implementeres.");
+        Pause();
+    }
+    static void ArraysOpgave2()
+    {
+        Console.Clear();
+        Console.WriteLine("Her skal Arrays opgave 2 implementeres.");
+        Pause();
+    }
+
+    static void Pause()
+    {
+        Console.WriteLine("\nTryk på en tast for at fortsætte...");
+        Console.ReadKey();
+    }
+}
